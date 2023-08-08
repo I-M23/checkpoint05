@@ -1,0 +1,31 @@
+ALGORITHM checkpoint5
+VAR
+    len,nbwords,nbvowels : INTEGER;
+    i,k,j : INTEGER;
+    str : STRING;
+BEGIN
+    i:1;
+    len :=0;
+    write ("write sentence");
+    read (str)
+    WHILE (str[i]<>".") DO
+        len:= i+1;
+        i:= i+1;
+    END_WHILE
+    
+    nbwords:=1;
+    FOR k FROM 0 TO len-1 STEP step  DO
+        IF (str[k] = ".") THEN
+            nbwords := nbwords + 1;
+        END_IF
+    END_FOR
+
+    nbvowels:=0;
+    FOR j FROM 0 TO len-1 STEP step  DO
+        IF (str[j]= "a" OR str[j] ="e" OR str [j] = "u" OR str[j] = "i" OR str[j] = "o" OR str[j] = "y") THEN
+            nbvowels := nbvowels + 1;
+        END_IF
+    END_FOR
+    write (nbwords);
+    write (nbvowels);
+END
